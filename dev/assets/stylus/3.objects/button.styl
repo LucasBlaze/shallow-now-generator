@@ -2,6 +2,7 @@
 	display inline-block
 	vertical-align middle
 	font-size 28px
+	font-weight bold
 	text-align center
 	text-transform uppercase
 	cursor pointer
@@ -12,6 +13,8 @@
 	line-height 1
 	outline none
 	padding 15px
+	+below($breakpoint-base)
+		font-size 20px
 	&,
 	&:hover,
 	&:focus,

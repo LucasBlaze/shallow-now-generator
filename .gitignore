@@ -3,4 +3,4 @@ build
 dev/assets/css
 dev/assets/js/scripts.min.js
 .git
-.gulp
+.gulp/*

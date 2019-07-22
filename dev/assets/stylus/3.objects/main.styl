@@ -1,0 +1,25 @@
+main 
+	width 100%
+	min-height 100vh
+	background-image url('../img/bg-juntos.png')
+	background-size cover
+	background-position center
+	background-repeat no-repeat
+	display flex
+	align-items center
+	&:after
+		content ''
+		position absolute
+		background-image url('../img/paulinha.png')
+		background-repeat no-repeat 
+		background-size contain
+		background-position bottom center
+		width 680px
+		height 500px
+		bottom 0
+		left 0
+		z-index 0
+		+below($breakpoint-base)
+			display none
+			
+		

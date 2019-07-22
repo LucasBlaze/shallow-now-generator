@@ -1,0 +1,109 @@
+.u-sr
+	//Hide only visually, but have it available for screenreaders: h5bp.com/v
+	position absolute
+	width 1px
+	height 1px
+	margin -1px
+	padding 0
+	overflow hidden
+	clip rect(0 0 0 0)
+	border 0
+
+.u-text
+	&-center
+		text-align center
+	&-right 
+		text-align right
+	&-left
+		text-align left
+
+.u-margin-clear
+	margin 0
+
+.u-padding-clear
+	padding 0
+
+.u-uppercase
+	text-transform uppercase
+	
+.u-relative
+	position relative 
+	
+.u-mobile-hide
+	+below($breakpoint-base)
+		display none
+
+.u-desktop-hide
+	+above($breakpoint-base)
+		display none
+		
+.u-text-color
+	&-primary 
+		color $brand-primary
+	&-secondary 
+		color $brand-secondary
+
+.u-bold 
+	font-weight bold
+	
+.u-block
+	display block
+
+.u-block-centralize
+	display block
+	margin-left auto 
+	margin-right auto
+	
+
+
+//Gerador de classes de espaçamento
+$sides = top, bottom, left, right, x, y
+$interval = 5
+$max-repetitions = 40
+
+//Os laços de repetição abaixo geram as classes de espaçamento com margin e padding
+//O número máximo em pixels é o resultado da multiplicação entre $interval e $max-repetitions
+for $i in (0..$max-repetitions)
+	for $side in $sides 
+		.u-m-{slice($side, 0, 1)}-{$i*$interval}
+			if $side == x
+				margin-left ($i*$interval)px!important
+				margin-right ($i*$interval)px!important
+			else if $side == y
+				margin-top ($i*$interval)px!important
+				margin-bottom ($i*$interval)px!important
+			else 
+				margin-{$side} ($i*$interval)px!important
+				
+		.u-p-{slice($side, 0, 1)}-{$i*$interval}
+			if $side == x
+				padding-left ($i*$interval)px!important
+				padding-right ($i*$interval)px!important
+			else if $side == y
+				padding-top ($i*$interval)px!important
+				padding-bottom ($i*$interval)px!important
+			else 
+				padding-{$side} ($i*$interval)px!important
+
+//Media Query para portáveis			
++below($breakpoint-base)
+	for $i in (0..$max-repetitions)
+		for $side in $sides 
+			.u-m-{slice($side, 0, 1)}-{$i*$interval}--mobile
+				if $side == x
+					margin-left ($i*$interval)px!important
+					margin-right ($i*$interval)px!important
+				else if $side == y
+					margin-top ($i*$interval)px!important
+					margin-bottom ($i*$interval)px!important
+				else
+					margin-{$side} ($i*$interval)px!important
+			.u-p-{slice($side, 0, 1)}-{$i*$interval}--mobile
+				if $side == x
+					margin-left ($i*$interval)px!important
+					margin-right ($i*$interval)px!important
+				else if $side == y
+					margin-top ($i*$interval)px!important
+					margin-bottom ($i*$interval)px!important
+				else
+					padding-{$side} ($i*$interval)px!important		

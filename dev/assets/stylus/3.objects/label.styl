@@ -1,0 +1,39 @@
+.o-label
+	display block
+	font-size 14px
+	font-weight 700
+	margin-bottom 5px
+	&--thin
+		font-weight 300
+	&--check,
+	.c-form--inline &
+		display inline-block
+		margin-right .5em
+	&--check
+		position relative
+		font-weight 300
+		overflow hidden
+		padding-left 20px
+		&:before,
+		&:after
+			content ''
+			position absolute
+			left 0
+			top 0
+		&:before
+			width 15px
+			height 15px
+			border 1px solid $gray
+			margin-top 2px
+		&:after
+			background-color $brand-primary
+			width 9px
+			height 9px
+			margin 5px 0 0 3px
+			opacity 0
+			transition opacity .2s
+		input
+			position absolute
+			left -20px
+		&.is-active:after
+			opacity 1

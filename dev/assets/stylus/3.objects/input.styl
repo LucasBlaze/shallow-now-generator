@@ -1,0 +1,12 @@
+// input objects are the only ones that can have cosmetic styles
+// because their definition in base would be too complex.
+// e.g.: input[type="text"], input[type="password"]...
+.o-input
+	font-size .8125rem
+	font-style italic
+	line-height 2
+	border 1px solid #d0d0d0
+	padding 6px 15px
+	&--blk
+		display block
+		width 100%

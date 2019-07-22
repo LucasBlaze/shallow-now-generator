@@ -1,0 +1,5 @@
+node_modules
+build
+dev/assets/css
+dev/assets/js/scripts.min.js
+.git

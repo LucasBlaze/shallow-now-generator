@@ -1,0 +1,50 @@
+.o-choose-file
+	position relative
+	display inline-block
+	clearfix()
+	&__label
+		position relative
+		float left
+		padding-right 27px
+		margin-right 10px
+		color $link-color
+		font-family inherit
+		font-size 14px
+		font-weight 700
+		overflow hidden
+		cursor pointer
+		&:after
+			position absolute
+			display inline-block
+			content ''
+			height 17px
+			width 20px
+			top 0
+			right 0
+			background-color transparent
+			background-image url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIyMS40NiAxMi43NSAxMDIuMDggOTAuNDkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMjEuNDYgMTIuNzUgMTAyLjA4IDkwLjQ5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6IzQwQkNBRjt9PC9zdHlsZT48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLC05NTIuMzYyMTgpIj48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNzIuMzIsOTY1LjEyYy0wLjU4LDAuMDQtMS4xMiwwLjMtMS41MiwwLjczbC0yNS41MiwyNy44NGMtMC44NywwLjk0LTAuODEsMi40MSwwLjEzLDMuMjhjMC45NCwwLjg3LDIuNDEsMC44MSwzLjI4LTAuMTNsMjEuNS0yMy40NXY1Ni43Yy0wLjAyLDEuMjIsMS4wOSwyLjM2LDIuMzIsMi4zNnMyLjM0LTEuMTMsMi4zMi0yLjM2di01Ni43bDIxLjUsMjMuNDVjMC44NywwLjk0LDIuMzQsMSwzLjI4LDAuMTNjMC45NC0wLjg3LDEtMi4zNCwwLjEzLTMuMjhMNzQuMiw5NjUuODVDNzMuNzIsOTY1LjMzLDczLjAzLDk2NS4wNiw3Mi4zMiw5NjUuMTJ6IE0yMy41MywxMDIzLjA5Yy0xLjIsMC4xMy0yLjA5LDEuMTUtMi4wNywyLjM2djI3Ljg0YzAsMS4yOCwxLjA0LDIuMzIsMi4zMiwyLjMyaDk3LjQ0YzEuMjgsMCwyLjMyLTEuMDQsMi4zMi0yLjMydi0yNy44NGMwLjAyLTEuMjgtMS4wMS0yLjMzLTIuMjktMi4zNWMtMS4yOC0wLjAyLTIuMzMsMS4wMS0yLjM1LDIuMjljMCwwLjAyLDAsMC4wNCwwLDAuMDd2MjUuNTJIMjYuMXYtMjUuNTJjMC4wMy0xLjI4LTAuOTktMi4zNC0yLjI3LTIuMzdDMjMuNzMsMTAyMy4wNywyMy42MywxMDIzLjA4LDIzLjUzLDEwMjMuMDl6Ii8+PC9nPjwvc3ZnPg==')
+			background-position center center
+			background-repeat no-repeat
+			background-size contain
+			pointer-events none
+			z-index 9
+	&__input-file
+		position absolute
+		display inline-block
+		top 0
+		left 0
+		min-width 100%
+		min-height 100%
+		cursor inherit
+		opacity 0
+		background-color white
+	&__path-file
+		position relative
+		float left
+		padding-left 7px
+		color $text-color
+		font-family inherit
+		font-size 14px
+		font-weight 300
+		border-left 1px solid #a3a3a3
+		

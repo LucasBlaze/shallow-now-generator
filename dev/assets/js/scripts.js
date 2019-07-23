@@ -27,6 +27,49 @@ var APP = {
 		},
 
 		index: function () {
+			let $audioPlayer = $('.js-audio'),
+				$karaoke 	 = $('.js-karaoke'),
+				$btn 		 = $('.js-btn');
+			let music = [
+				{'start': '0.154956', 'end': '0.643498', 'text': 'Diga o que ', 'insert': false},
+				{'start': '0.643498', 'end': '1.930525', 'text': 'te fez ', 'insert': false},
+				{'start': '2.005343', 'end': '2.559279', 'text': 'sentir ', 'insert': false}, 
+				{'start': '2.559279', 'end': '4.075946', 'text': 'saudade. <br/>', 'insert': false},
+				{'start': '4.456461', 'end': '5.211789', 'text': 'Bote um ', 'insert': false},
+				{'start': '5.093975', 'end': '6.095257', 'text': 'ponto ', 'insert': false},
+				{'start': '6.082425', 'end': '8.829874', 'text': 'finaaaal. <br/>', 'insert': false},
+				{'start': '9.000000', 'end': '9.943571', 'text': 'Cole ', 'insert': false},
+				{'start': '9.943571', 'end': '10.558583', 'text': 'de uma ', 'insert': false},
+				{'start': '10.864018', 'end': '11.79269', 'text': 'vez ', 'insert': false},
+				{'start': '11.29269', 'end': '12.3217', 'text': 'nossas ', 'insert': false},
+				{'start': '12.26428', 'end': '13.917121', 'text': 'metades<br/> ', 'insert': false},
+				{'start': '14.008146', 'end': '15', 'text': 'Juntos... ', 'insert': false}
+			];
+
+			$audioPlayer.on('timeupdate', function(e){
+				$.each(music, function(index, el){
+					if($audioPlayer[0].currentTime >= el.start && $audioPlayer[0].currentTime <= el.end && !el.insert){
+						let $letter = $('<span></span>');
+						
+						$letter.html(el.text).hide();
+						$karaoke.append($letter);
+						$letter.fadeIn('fast');
+
+						el.insert = true;
+					}
+					if($audioPlayer[0].currentTime > 14){
+						$btn.stop().fadeIn('slow');
+					}
+				});
+			});
+
+			$('.js-play').on('click', function(){
+				$(this).fadeOut('fast');
+				document.getElementById('audio').play();	
+			})
+			
+			
+
 			let possibilidades = [
 			'Até o final', 
 			'Como um casal',
@@ -86,15 +129,20 @@ var APP = {
 			'No show do Charlie Brown'
 			];
 
+			let dump_possibilidades = possibilidades,
+			$button = $('#gerador'),
+			$texto = $('#texto');
 
-			let button = document.getElementById('gerador'),
-			texto = document.getElementById('texto');
+			$button.on('click', function(){
+				possibilidades.length == 0 ? possibilidades = dump_possibilidades : '';
 
-			button.addEventListener('click', function(){
 				let randomValue = possibilidades[Math.floor(possibilidades.length * Math.random())];
-				texto.innerHTML = randomValue;
+				possibilidades = possibilidades.filter(item => item !== randomValue);
 
+				$texto.hide().html(randomValue).fadeIn('fast');
+				
 			});
+
 		},
 	}
 

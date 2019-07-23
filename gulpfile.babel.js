@@ -116,6 +116,8 @@ function buildMove(){
 		'!dev/views/**/*',
 		'!dev/views/**/*.html',
 		'!dev/assets/stylus',
+		'!dev/assets/stylus/**',
+		'!dev/assets/stylus/**/*',
 		'!dev/assets/stylus/**/*.styl',
 		'!dev/assets/js/scripts.js'
 		])
